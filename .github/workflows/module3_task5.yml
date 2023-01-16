@@ -60,7 +60,7 @@ jobs:
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deployed on"
-          publish-message: "Published on"
+          publish-message: "🎉 Published on"
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
