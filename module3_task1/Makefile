@@ -1,5 +1,3 @@
-.PHONY:
-
 build:## build: Create all content in the website
 			hugo -d dist/
 clean:## Revome all content in the website
