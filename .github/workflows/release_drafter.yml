@@ -1,7 +1,7 @@
 name: release_drafter
 on:
   push:
-    tags: "1.0.0"
+    tags: "1.0.1"
     branches:
       - main
   pull_request:
