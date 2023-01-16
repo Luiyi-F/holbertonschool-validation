@@ -18,7 +18,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: sudo module3_task2/setup.sh
+      - run: sudo module3_task3/setup.sh
       - name: install markdown
         run: npm install -g markdownlint-cli
 
