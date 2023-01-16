@@ -12,11 +12,11 @@ jobs:
   update_release_draft:
     permissions: write-all
     name: release_drafter_job
-    runs: ubuntu-18.04
+    runs-on: ubuntu-18.04
     steps:
       - name: release drafter
         uses: release-drafter/release-drafter@v5
         with:
-          github-token: ${{ screts.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           labels: "changelog"
           output: changelog.md
