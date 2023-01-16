@@ -54,12 +54,12 @@ jobs:
       - name: Release Drafter
         uses: release-drafter/release-drafter@v5.21.1
       - name: Netlify Actions
-        uses: nwtgck/actions-netlify@2.0.0
+        uses: nwtgck/actions-netlify@v2.0.0
         with:
           publish-dir: "./module3_task5/dist"
           production-branch: main
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Deploy on"
+          deploy-message: "Deployed on"
           publish-message: "Published on"
           enable-pull-request-comment: true
           enable-commit-comment: true
