@@ -7,7 +7,7 @@ on:
       - "1.0.1"
   schedule:
     - cron: "0 0 * * *"
-  pull_request: [opened, reopened, sychronize]
+  pull_request: [opened, reopened, synchronize]
 
 permissions: read-all
 
@@ -51,4 +51,4 @@ jobs:
       - run: gh release create v1.0.1 --title "v1.0.1" \
           --notes DEPLOY.md 2>/dev/null || echo "OK"
       - name: Release Drafter
-        run: release-drafter/release-drafter@5.21.1
+        run: release-drafter/release-drafter@v5.21.1
