@@ -1,7 +1,8 @@
 .PHONY: ## build clean post
 
 build: ## Build the website
-	hugo -d dist/
+	@hugo
+	touch awesome-api
 
 clean: ## Clean the build directory
 	rm -r dist/*
