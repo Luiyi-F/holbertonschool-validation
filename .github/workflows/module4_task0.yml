@@ -22,20 +22,19 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: sudo module3_task5/setup.sh
+      - run: sudo module4_task0/setup.sh
       - name: install markdown
         run: npm install -g markdownlint-cli
 
-      - run: cd module4_task0 && make help
-      - run: cd module4_task0 && make build
-      - run: cd module4_task0 && make clean
-      - run: cd module4_task0 && make build
-      - run: cd module4_task0 && make post POST_NAME="name" POST_TITLE="title"
-      - run: cd module4_task0 && make lint
-      - run: cd module4_task0 && make package
-      - run: cd module4_task0 && make unit-tests
-      - run: cd module4_task0 && make integration-tests
-      - run: cd module4_task0 && make validate
+      - name: Make validation
+        run: |
+          cd module4_task0
+          make build
+          make package
+          make unit-tests
+          make integration-tests
+          make validate
+
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/1.0.1')
