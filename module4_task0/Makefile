@@ -26,10 +26,10 @@ lint: ## Lint with markdown
 
 unit-tests: ## Test file
 			@echo "running unit tests"
-			touch converage-units.out
+			touch coverage-units.out
 
 integration-tests: ## Integration file
 			@echo "running integration tests"
-			touch converage-integrations.out
+			touch coverage-integrations.out
 
 validate: ## validate
