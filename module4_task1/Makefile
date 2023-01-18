@@ -33,3 +33,6 @@ integration-tests: ## Integration file
 			touch coverage-integrations.out
 
 validate: ## validate
+
+build-docker: ## Build docker image
+			docker build -t "awesome:build" ./build
