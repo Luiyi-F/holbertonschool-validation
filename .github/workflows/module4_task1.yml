@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: 16
       - name: install dependences
-        run: make -c module4_task1 build-dependeces
+        run: make -c module4_task1 build-dependecies
 
       - name: install markdown
         run: npm install -g markdownlint-cli

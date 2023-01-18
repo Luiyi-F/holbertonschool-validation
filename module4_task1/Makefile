@@ -1,9 +1,9 @@
-.PHONY: build ## build clean post
 
 help: ## Show commands usage information
 			@echo "Available targets:"
 			@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//' | awk '{ printf "  %-20s %s\n", $$1, $$2 }'
 
+.PHONY: build ## build clean post 
 build: ## Build the website
 			@hugo
 			touch awesome-api
@@ -38,8 +38,10 @@ integration-tests: ## Integration file
 
 validate: ## validate
 
+.PHONY:
 build-docker: ## Build docker image
 			docker build -t "awesome:build" ./build
 
-build-dependences: ## Build docker dependences
+.PHONY: build-dependencies
+build-dependencies: ## Build docker dependences
 			@sudo apt- install ./hugo.deb
