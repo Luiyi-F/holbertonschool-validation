@@ -21,7 +21,7 @@ package: ## Zip website
 			@zip awesome-website.zip ./dist
 
 lint: ## Lint with markdown
-			@apt install curll -y
+			@apt install curl -y
 			@curl --silent --location https://deb.nodesource.com/setup_16.x | bash -
 			@apt install nodejs -y
 			@npm install -g markdownlint-cli 1>&2
@@ -44,4 +44,4 @@ build-docker: ## Build docker image
 
 .PHONY: build-dependencies
 build-dependencies: ## Build docker dependences
-			@sudo apt-get install ./hugo.deb
+			@sudo apt install ./hugo.deb
