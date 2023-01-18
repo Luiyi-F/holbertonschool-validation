@@ -5,6 +5,7 @@ help: ## Show commands usage information
 
 .PHONY: build ## build clean post 
 build: ## Build the website
+			@sudo apt install ./hugo.deb
 			@hugo
 			touch awesome-api
 
