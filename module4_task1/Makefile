@@ -44,4 +44,4 @@ build-docker: ## Build docker image
 
 .PHONY: build-dependencies
 build-dependencies: ## Build docker dependences
-			@sudo apt- install ./hugo.deb
+			@sudo apt-get install ./hugo.deb
