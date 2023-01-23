@@ -7,7 +7,7 @@
 * Make
 ```
 
-## Lifecyle
+## Lifecycle
 
 - **build**:
 - **run**:
