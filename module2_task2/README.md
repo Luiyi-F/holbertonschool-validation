@@ -15,5 +15,5 @@
 - **clean**: Remove the binary and log files
 - **test**: Create test for the API using curl
 - **lint**: Lints all files
-- **unit_tests**: Validate different cases
+- **unit-tests**: Validate different cases
 - **help**: Show all rules and the functions
