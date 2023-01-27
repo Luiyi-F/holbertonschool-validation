@@ -35,31 +35,31 @@ clean:	## Removes binary and logs
 	-rm -rf awesome-api awesome.log coverage* go* awesome-website.zip ./dist
 
 test:	## Tests API using go test
-			-make build
-			make unit-tests
-			make integration-tests
+	-make build
+	make unit-tests
+	make integration-tests
 
 lint:	## Lints all the go files using golangci-lint
-			-make build-docker
-			docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build markdownlint README.md DEPLOY.md
-			docker run --rm --volume=$(shell pwd):/app --workdir=/app hadolint/hadolint hadolint build/Dockerfile
+	-make build-docker
+	docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build markdownlint README.md DEPLOY.md
+	docker run --rm --volume=$(shell pwd):/app --workdir=/app hadolint/hadolint hadolint build/Dockerfile
 
 unit-tests:	## Runs implemented unit test using go test
-			docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build go test -v -short -coverprofile=coverage-units.out
+	docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build go test -v -short -coverprofile=coverage-units.out
 
 integration-tests:	## Runs integration test using go test
-			docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build go test -v -coverprofile=coverage-integrations.out
+	docker run --rm --volume=$(shell pwd):/app --workdir=/app awesome:build go test -v -coverprofile=coverage-integrations.out
 
 package:  ## Generates a zip archive to deployment
-			-make build
-			zip awesome-website.zip awesome-api dist/
+	-make build
+	zip awesome-website.zip awesome-api dist/
 
 build-docker:	## Builds a Docker image from Dockerfile on build directory
-			docker build -t awesome:build ./build
+	docker build -t awesome:build ./build
 
 docker-tests:	## Test the generated docker image using container-structure-test and cst.yml config file
-			-make build-docker
-			container-structure-test test --image awesome:build --config build/cst.yml
+	-make build-docker
+	container-structure-test test --image awesome:build --config build/cst.yml
 
 help:	## Show this help message
-			@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
+	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
