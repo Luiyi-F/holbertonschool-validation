@@ -1,107 +1,33 @@
-# Build a website with hugo
+# My Awesome API
 
 ## Prerequisites
 
-```bash
-Ubunto-20.04
-Install hugo in a higher version
-```
-
-These distributions are for the site/web page to work properly.
+go and make installed
 
 ## Lifecycle
 
-The life cycle of the web site is represented in the different rules and their
-functions within the Makefile.
-
-### help
-
-With this rule in the Makefile we can create a list of all the rules and a brief
-description of how they work.
-
-```bash
-make help
-```
-
-It should look something like this:
-
-```bash
-Available functions
-build: build: Create all content in the website
-clean: Revome all content in the website
-post: Create a blog
-help: Helpful list of commands
-```
-
-### Build
-
-With this rule in the Makefile we can create all the necessary files to be
-able to run our website, with the following command we execute the command.
-
-```bash
-make build
-```
-
-### Post
-
-With this rule in the Makefile we can create new posts/blogs that can be
-displayed on our website, they can be created with the following command.
-
-```bash
-make POST_NAME=who-are-we POST_TITLE="Who are we" post
-```
-
-The POST_NAME is the name of the file and the POST_TITLE is the title of
-the file.
-
-### build-docker
-
-Builds a Docker image from Dockerfile on build directory
-
-### docker-tests
-
-### Check
-
-Lints and check for dead links on markdowns using markdownlint-cli and
+go-build:        Builds the API binary file using go
+hugo-build:              Builds a website using gohugo on the dist folder
+build:   Builds all that is needed for website
+post: Create a new blog post whose filename and title come from the environment
+variables POST_TITLE and POST_NAME
+check:   Lints and check for dead links on markdowns using markdownlint-cli and
 markdown-link-check
+validate:  Validates dist/index.html using W3C Hbtn validator
+run:     Runs the built binary and send everything to awesome.log
+stop:    Terminates the execution of awesome-api
+clean:   Removes binary and logs
+test:    Tests API using go test
+lint:    Lints all the go files using golangci-lint
+unit-tests:      Runs implemented unit test using go test
+integration-tests:       Runs integration test using go test
+package:   Generates a zip archive to deployment
+build-docker:    Builds a Docker image from Dockerfile on build directory
+docker-tests: Test the generated docker image using container-structure-test
+and cst.yml config file
+help:    Show this help message
 
-### Validate
+## Workflow
 
-Validates dist/index.html using W3C Hbtn validator
-
-### Run
-
-Runs the built binary and send everything to awesome.log
-
-### Stop
-
-Terminates the execution of awesome-api
-
-### Clean
-
-Removes binary and logs
-
-### Test
-
-Tests API using go test
-
-### lint
-
-Lints all the go files using golangci-lint
-
-### Unit-tests
-
-Runs implemented unit test using go test
-
-### Package
-
-Generates a zip archive to deployment
-
-### Clean
-
-With this rule in the Makefile we can delete the files that were generated
-to create the web site, with the rule build
-
-```bash
-make clean
-```
+Github actions has been activated. Workflows can be found at directory
+.github/workflows

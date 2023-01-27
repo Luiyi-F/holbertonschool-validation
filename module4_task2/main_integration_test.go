@@ -22,7 +22,7 @@ func Test_server(t *testing.T) {
 			name:         "Home page",
 			URI:          "",
 			responseCode: 200,
-			body:         "",
+			body: "",
 		},
 		{
 			name:         "Name Holberton",
