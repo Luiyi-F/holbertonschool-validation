@@ -54,7 +54,7 @@ make POST_NAME=who-are-we POST_TITLE="Who are we" post
 The POST_NAME is the name of the file and the POST_TITLE is the title of
 the file.
 
-### Docker-build
+### build-docker
 
 Builds a Docker image from Dockerfile on build directory
 
