@@ -54,6 +54,47 @@ make POST_NAME=who-are-we POST_TITLE="Who are we" post
 The POST_NAME is the name of the file and the POST_TITLE is the title of
 the file.
 
+### Docker-build
+
+Builds a Docker image from Dockerfile on build directory
+
+### Check
+
+Lints and check for dead links on markdowns using markdownlint-cli and
+markdown-link-check
+
+### Validate
+
+Validates dist/index.html using W3C Hbtn validator
+
+### Run
+
+Runs the built binary and send everything to awesome.log
+
+### Stop
+
+Terminates the execution of awesome-api
+
+### Clean
+
+Removes binary and logs
+
+### Test
+
+Tests API using go test
+
+### lint
+
+Lints all the go files using golangci-lint
+
+### Unit-tests
+
+Runs implemented unit test using go test
+
+### Package
+
+Generates a zip archive to deployment
+
 ### Clean
 
 With this rule in the Makefile we can delete the files that were generated
