@@ -58,6 +58,8 @@ the file.
 
 Builds a Docker image from Dockerfile on build directory
 
+### docker-tests
+
 ### Check
 
 Lints and check for dead links on markdowns using markdownlint-cli and
